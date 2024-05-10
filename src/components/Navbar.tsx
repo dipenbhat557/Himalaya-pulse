@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -7,41 +7,32 @@ import { IoClose } from "react-icons/io5";
 import { IoMdMenu } from "react-icons/io";
 
 const Navbar = () => {
-  // State to track the active link and toggle for mobile menu
-  const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
+      className={`${styles.paddingX} w-full flex items-center  fixed top-0 z-20 bg-primary`}
     >
-      <div className="w-full flex justify-between items-center max-width-7xl mx-auto">
+      <div className="w-full h-[80px]  flex justify-around items-center ">
         {/* Logo and site title */}
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="flex w-[40%] h-full  gap-2"
           onClick={() => {
-            setActive("");
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="" className="w-9 h-9 object-contain" />
-          <p className="text-white text-[18px] font-bold cursor-pointer">
-            Dipendra
-          </p>
+          <img src={logo} alt="" className="w-[40%] h-full object-contain" />
         </Link>
 
         {/* Desktop navigation */}
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden  sm:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
               key={link.id}
-              className={`${
-                active === link.title ? "text-white" : "text-secondary"
-              } hover:text-white text-18px font-medium cursor-pointer`}
-              onClick={() => setActive(link.title)}
+              className={`text-white  text-[12px] font-light cursor-pointer`}
             >
-              <a href={`#${link.id}`}>{link.title}</a>
+              <a href={`#${link.id}`}>{link.title.toUpperCase()}</a>
             </li>
           ))}
         </ul>
@@ -70,12 +61,9 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <li
                   key={link.id}
-                  className={`${
-                    active === link.title ? "text-white" : "text-secondary"
-                  } font-poppins text-[16px] font-medium cursor-pointer`}
+                  className={`text-white`}
                   onClick={() => {
                     setToggle(!toggle);
-                    setActive(link.title);
                   }}
                 >
                   <a href={`#${link.id}`}>{link.title}</a>

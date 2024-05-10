@@ -9,7 +9,7 @@ import Reports from "./components/Reports";
 
 const HomePage = () => {
   return (
-    <>
+    <div className="flex flex-col w-full h-full overflow-x-hidden">
       <Navbar />
       <Hero />
       <Products />
@@ -18,7 +18,7 @@ const HomePage = () => {
       <ContactUs />
       <AboutUs />
       <Footer />
-    </>
+    </div>
   );
 };
 export default HomePage;
