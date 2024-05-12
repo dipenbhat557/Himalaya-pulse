@@ -1,5 +1,10 @@
 import { leaf1, p1, p2 } from "../assets";
 
+const bgClip = {
+  clipPath:
+    "polygon(0 32%, 11% 17%, 29% 11%, 56% 16%, 78% 9%, 92% 15%, 100% 49%, 95% 86%, 75% 97%, 42% 97%, 22% 95%, 0% 85%)",
+};
+
 const Hero = () => {
   return (
     <div className="mt-[80px] bg-primary h-[500px] relative w-full flex items-center justify-around">
@@ -17,15 +22,19 @@ const Hero = () => {
           properties, promoting health and vitality naturally."
         </p>
       </div>
-      <div className="w-[40%] h-[50%] flex flex-col items-center justify-start -mt-36">
-        <div className="w-full h-[80%] ">
+      <div className="w-[40%] h-[50%] flex flex-col relative items-center justify-start -mt-36">
+        <div
+          className="w-full h-[400px] bg-gradient-to-b from-[#0C492878] to-[#FFFFFF61]  absolute  z-10"
+          style={bgClip}
+        />
+        <div className="w-full h-[80%] z-20">
           <img
             src={p1}
             alt="product 1"
             className="w-full h-full object-contain "
           />
         </div>
-        <div className="w-[90%] h-[40%] ">
+        <div className="w-[90%] h-[40%] z-20">
           <img
             src={p2}
             alt="product 1"

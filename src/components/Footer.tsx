@@ -1,4 +1,4 @@
-import { MdLocationCity, MdMobileScreenShare } from "react-icons/md";
+import { MdMobileScreenShare } from "react-icons/md";
 import { logo } from "../assets";
 import { IoLocationSharp, IoMail } from "react-icons/io5";
 
