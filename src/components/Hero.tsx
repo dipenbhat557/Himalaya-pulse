@@ -9,7 +9,7 @@ const Hero = () => {
         className="w-[20%] rotate-45 h-[30%] absolute -top-[2%] -left-[6%] z-40"
       />
       <div className="flex flex-col justify-center items-center gap-6 h-full w-[40%]">
-        <p className="w-[90%] font-medium tracking-wider z-50 text-[45px] text-white font-serif">
+        <p className="w-[90%] font-medium tracking-wider z-40 text-[45px] text-white font-serif">
           "Nature's Powerhouse, Packed with Nutrition and Healing Potential."
         </p>
         <p className="w-[80%] font-light text-[20px] leading-loose text-slate-400 font-serif">

@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center  fixed top-0 z-20 bg-primary`}
+      className={`${styles.paddingX} w-full flex items-center  fixed top-0 z-50 bg-primary`}
     >
       <div className="w-full h-[80px]  flex justify-around items-center ">
         {/* Logo and site title */}
