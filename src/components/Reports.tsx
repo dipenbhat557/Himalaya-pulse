@@ -11,10 +11,10 @@ const Reports = () => {
     <div
       className={`${styles.padding} flex flex-col sm:flex-row justify-between items-center w-full h-auto sm:h-[400px]  mt-4`}
     >
-      <div className="w-full sm:w-[30%] h-full flex flex-col justify-around items-center mb-5 sm:mb-0 overflow-y-scroll">
+      <div className="w-full sm:w-[30%] h-full flex flex-col justify-between items-center mb-5 sm:mb-0 overflow-y-scroll">
         <div className="flex w-full justify-start items-center">
           <p
-            className={`${styles.sectionHeadText}  text-primary font-semibold h-full  ml-4`}
+            className={`${styles.sectionHeadText}  text-primary font-semibold  ml-4`}
           >
             Reports
           </p>

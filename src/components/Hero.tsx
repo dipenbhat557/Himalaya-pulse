@@ -2,17 +2,17 @@ import { leaf1, p1, p2 } from "../assets";
 
 const Hero = () => {
   return (
-    <div className="mt-[80px] bg-primary h-[550px] relative w-full flex items-center justify-around">
+    <div className="mt-[80px] bg-primary h-[500px] relative w-full flex items-center justify-around">
       <img
         src={leaf1}
         alt="leaf 1"
-        className="w-[20%] h-[20%] absolute top-[0%] -left-[4%] z-10"
+        className="w-[20%] rotate-45 h-[30%] absolute -top-[2%] -left-[6%] z-40"
       />
       <div className="flex flex-col justify-center items-center gap-6 h-full w-[40%]">
-        <p className="w-[80%] font-medium tracking-wider text-[45px] text-white font-serif">
-          "Nature's powerhouse, packed with nutrition and healing potential."
+        <p className="w-[90%] font-medium tracking-wider z-50 text-[45px] text-white font-serif">
+          "Nature's Powerhouse, Packed with Nutrition and Healing Potential."
         </p>
-        <p className="w-[80%] font-light text-[20px] text-slate-400 font-serif">
+        <p className="w-[80%] font-light text-[20px] leading-loose text-slate-400 font-serif">
           "Moringa: Nutrient-rich herb with anti-inflammatory, antioxidant
           properties, promoting health and vitality naturally."
         </p>
@@ -36,7 +36,7 @@ const Hero = () => {
       <img
         src={leaf1}
         alt="leaf 1"
-        className="w-[20%] h-[20%] absolute bottom-[0%] -right-[4%] z-10"
+        className="w-[20%] h-[20%] absolute -bottom-[5%] -right-[4%] z-10"
       />
     </div>
   );
