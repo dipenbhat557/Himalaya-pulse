@@ -5,6 +5,7 @@ import { IoLocationSharp, IoMail } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import Navbar from "./Navbar";
 
 const Footer = () => {
   const handleWhatsAppClick = () => {
@@ -25,7 +26,7 @@ const Footer = () => {
     <motion.div
       variants={textVariant(0.2)}
       id="footer"
-      className="bg-black w-full h-[320px] sm:h-[300px] flex flex-col justify-between"
+      className="bg-black w-full h-[320px] sm:h-[223px] flex flex-col justify-between"
     >
       <div className="w-full h-[90%] flex items-center justify-around">
         <div className="w-[50%] sm:w-[30%] h-full flex flex-col items-center gap-4">
@@ -71,9 +72,6 @@ const Footer = () => {
             <p className="w-[70%]">info@himalayapulse.com</p>
           </div>
         </div>
-      </div>
-      <div className="w-full h-[17%] flex items-center justify-center font-light text-[13px] text-white">
-        Copyrights. All rights reserved.
       </div>
     </motion.div>
   );

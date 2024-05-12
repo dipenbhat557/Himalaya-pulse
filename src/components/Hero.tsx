@@ -1,115 +1,144 @@
-import { leaf1, p1, p2 } from "../assets";
+import { useEffect, useState } from "react";
+import { bg1, bg2, bg3 } from "../assets";
+const heroElements = [bg2, bg1, bg3];
+
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
-import { SectionWrapper } from "../hoc";
 
-const bgClip = {
-  clipPath:
-    "polygon(0 32%, 11% 17%, 29% 11%, 56% 16%, 78% 9%, 92% 15%, 100% 49%, 95% 86%, 75% 97%, 42% 97%, 22% 95%, 0% 85%)",
-};
+import "../index.css";
 
-const Hero = () => {
+const hero = () => {
+  const [currentElement, setCurrentElement] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY >= 105) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentElement(
+        (prevElement) => (prevElement + 1) % heroElements.length
+      );
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div
-      id="hero"
-      className="mt-[80px] bg-primary h-[500px] relative w-full flex flex-col sm:flex-row items-center justify-around"
-    >
-      <motion.div
-        variants={fadeIn("right", "spring", 0.5, 1.7)}
-        className="w-[40%] sm:w-[20%] rotate-45 h-[20%] sm:h-[30%] absolute -top-[2%] -left-[6%] z-40"
-      >
-        <img
-          src={leaf1}
-          alt="leaf 1"
-          className="w-full h-full object-contain"
-        />
-      </motion.div>
-      <div className="flex flex-col justify-center items-center gap-6 h-[20%] sm:h-full w-full text-center  sm:w-[40%]">
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-          className="w-[90%] font-medium tracking-wider z-40 text-[25px] sm:text-[45px] text-white font-serif"
-        >
-          {"Nature's Powerhouse,".split("").map((char, index) => (
-            <motion.span
+    <>
+      <div className="w-full   h-screen mt-[80px] sm:h-[616px]  overflow-hidden">
+        <div className="photo-container">
+          {heroElements.map((element, index) => (
+            <div
               key={index}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.1 * index, duration: 0.1 }}
-              style={{ display: "inline-block" }}
+              className={`absolute w-full h-full  ${
+                index === currentElement ? "visible" : "hidden"
+              }`}
             >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
+              <img
+                src={element}
+                alt="Background Photo"
+                className={`photo-slide w-full h-full photo-element ${
+                  index === currentElement ? "photo-fade-in" : "photo-fade-out"
+                }`}
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                  height: "100%",
+                }}
+              />
+            </div>
           ))}
-          <br />
-          {" Packed with Nutrition".split("").map((char, index) => (
-            <motion.span
-              key={index}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.1 * index, duration: 0.1 }}
-              style={{ display: "inline-block" }}
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
-          <br />
-          {"and Healing Potential.".split("").map((char, index) => (
-            <motion.span
-              key={index}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.1 * index, duration: 0.1 }}
-              style={{ display: "inline-block" }}
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
-        </motion.span>
+        </div>
 
-        <motion.p
-          variants={textVariant(0.3)}
-          className="hidden sm:flex w-[80%] font-light text-[20px] leading-loose text-slate-400 font-serif"
-        >
-          "Moringa: Nutrient-rich herb with anti-inflammatory, antioxidant
-          properties, promoting health and vitality naturally."
-        </motion.p>
+        <div className="w-full mt-[80px] z-30 h-full bg-black bg-opacity-60 absolute top-0 left-0 flex flex-col justify-between text-white"></div>
+
+        <div className="flex flex-col justify-center items-center gap-6 h-[20%]  absolute left-[10%]  sm:h-full w-full text-center  sm:w-[40%]">
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            className="w-[90%] font-medium tracking-wider z-40 text-[35px] sm:text-[55px] text-white font-serif"
+          >
+            {"Authenticity meets ".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.1 * index, duration: 0.1 }}
+                style={{ display: "inline-block" }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+
+            {" ".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.1 * index, duration: 0.1 }}
+                style={{ display: "inline-block" }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+
+            {"Quality".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.1 * index, duration: 0.1 }}
+                style={{ display: "inline-block" }}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
+          </motion.span>
+
+          <motion.p
+            variants={textVariant(0.3)}
+            className="hidden sm:flex w-[80%] z-20 font-light text-[20px] leading-loose text-white font-serif"
+          >
+            "Moringa: Nutrient-rich herb with anti-inflammatory, antioxidant
+            properties, promoting health and vitality naturally."
+          </motion.p>
+          <button
+            type="button"
+            className="text-white  z-50   border hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg  text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="mx-2"
+            >
+              <path
+                d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm3.519 0L12 11.671 18.481 6H5.52zM20 7.329l-7.341 6.424a1 1 0 0 1-1.318 0L4 7.329V18h16V7.329z"
+                fill="#ffffff"
+              />
+            </svg>
+            Contact Us
+          </button>
+        </div>
       </div>
-      <motion.div
-        variants={fadeIn("left", "spring", 0.7, 0.5)}
-        className="w-[90%] sm:w-[40%]  h-[50%] flex flex-col relative items-center justify-start -mt-36"
-      >
-        <div
-          className="w-full h-[300px] sm:h-[400px] bg-gradient-to-b from-[#0C492878] to-[#FFFFFF61]  absolute  z-10"
-          style={bgClip}
-        />
-        <div className="w-full h-[80%] z-20">
-          <img
-            src={p1}
-            alt="product 1"
-            className="w-full h-full object-contain "
-          />
-        </div>
-        <div className="w-[90%] h-[40%] z-20">
-          <img
-            src={p2}
-            alt="product 1"
-            className="w-full h-full object-contain"
-          />
-        </div>
-      </motion.div>
-      <motion.div
-        variants={fadeIn("right", "spring", 0.5, 1.7)}
-        className="w-[40%] sm:w-[20%] h-[30%] absolute -bottom-[5%] -right-[4%] z-10"
-      >
-        <img
-          src={leaf1}
-          alt="leaf 1"
-          className="w-full h-full object-contain"
-        />
-      </motion.div>
-    </div>
+    </>
   );
 };
-export default SectionWrapper(Hero);
+
+export default hero;
