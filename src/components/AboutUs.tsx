@@ -1,8 +1,9 @@
-import { leaf1, leaf2 } from "../assets";
+import { leaf2 } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 
 import { motion } from "framer-motion";
+import { fadeIn, textVariant } from "../utils/motion";
 
 const bgClip = {
   clipPath:
@@ -15,7 +16,10 @@ const AboutUs = () => {
       id="aboutus"
       className={`w-full h-[800px] sm:h-[450px] flex flex-col sm:flex-row justify-between ${styles.paddingY}`}
     >
-      <div className="w-full sm:w-[35%] flex items-center justify-center h-[50%] sm:h-full relative">
+      <motion.div
+        variants={fadeIn("right", "spring", 0.7, 0.6)}
+        className="w-full sm:w-[35%] flex items-center justify-center h-[50%] sm:h-full relative"
+      >
         <div
           className="w-full h-full sm:left-6 absolute bg-gradient-to-b to-[#0C492878] from-primary  -z-10"
           style={bgClip}
@@ -28,17 +32,24 @@ const AboutUs = () => {
             alt="leaf-2"
           />
         </div>
-        <p className="text-[30px] sm:text-[45px] w-[70%] text-center z-20 text-white font-light">
+        <motion.p
+          variants={textVariant(0.9)}
+          className="text-[30px] sm:text-[45px] w-[70%] text-center z-20 text-white font-light"
+        >
           Authenticity meets Quality
-        </p>
-      </div>
+        </motion.p>
+      </motion.div>
       <div className="w-full sm:w-[65%] h-[500px] sm:h-auto flex flex-col items-center gap-3">
-        <p
+        <motion.p
+          variants={textVariant(0.6)}
           className={`${styles.sectionHeadText}  text-primary font-semibold  ml-4`}
         >
           About Us
-        </p>
-        <p className=" w-[90%] text-center sm:leading-loose ">
+        </motion.p>
+        <motion.p
+          variants={fadeIn("left", "spring", 0.7, 0.6)}
+          className=" w-[90%] text-center sm:leading-loose "
+        >
           Himalaya Pulse was envisioned in the year 2022, with an imaginative
           move to produce,plant, acquire and build goods/products related to the
           overall wellbeing of an individual. We are certain in delivering the
@@ -51,7 +62,7 @@ const AboutUs = () => {
           developed. We have an established packaging factory setup for our
           products in order to attain a harmonized and production oriented
           company. 
-        </p>
+        </motion.p>
       </div>
     </div>
   );

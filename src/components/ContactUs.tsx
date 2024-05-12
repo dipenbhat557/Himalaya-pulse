@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
+import { fadeIn, textVariant } from "../utils/motion";
 
 const ContactUs = () => {
   const navigate = useNavigate();
@@ -74,16 +75,21 @@ const ContactUs = () => {
       className={`${styles.paddingX} py-3 w-full h-auto flex flex-col gap-4`}
     >
       <div className="border-b-2 border-dashed border-slate-400 w-full" />
-      <p
+      <motion.p
+        variants={textVariant(0.2)}
         className={`${styles.sectionHeadText}  text-primary font-semibold  ml-4`}
       >
         Contact Us
-      </p>
-      <p className="text-[10px] font-semibold text-[#717171]">
+      </motion.p>
+      <motion.p
+        variants={textVariant(0.3)}
+        className="text-[10px] font-semibold text-[#717171]"
+      >
         Any question or remarks? Just write us a message!
-      </p>
+      </motion.p>
       <div className="w-full h-auto flex flex-col sm:flex-row justify-between items-center">
-        <div
+        <motion.div
+          variants={fadeIn("right", "spring", 0.7, 0.6)}
           className={`w-[90%] sm:w-[30%] text-white flex flex-col h-[400px] rounded-lg relative bg-primary p-10 justify-around`}
         >
           <div className="flex flex-col gap-2">
@@ -123,8 +129,9 @@ const ContactUs = () => {
           </div>
           <div className="w-[150px] h-[150px] rounded-full opacity-30 bg-white absolute -bottom-[10%] -right-[10%]" />
           <div className="w-[100px] h-[100px] rounded-full opacity-30 bg-white absolute bottom-[8%] right-[8%]" />
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          variants={fadeIn("left", "spring", 0.7, 0.6)}
           className={`w-[90%] sm:w-[58%] flex flex-col ${styles.padding} gap-8`}
         >
           <div className="w-full font-medium flex justify-between items-center">
@@ -232,7 +239,13 @@ const ContactUs = () => {
               className="bg-tertiary  placeholder:text-secondary border border-slate-200   w-[90%] outline-none  font-medium"
             />
           </div>
-        </div>
+          <button
+            className="py-2 px-4 rounded-lg w-[50%] bg-primary text-white"
+            onClick={handleSubmit}
+          >
+            {loading ? "Sending Message..." : "Send Message"}
+          </button>
+        </motion.div>
       </div>
     </div>
   );

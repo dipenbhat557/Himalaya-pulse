@@ -1,14 +1,12 @@
 import { MdMobileScreenShare } from "react-icons/md";
 import { logo } from "../assets";
 import { IoLocationSharp, IoMail } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
 
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
+import { textVariant } from "../utils/motion";
 
 const Footer = () => {
-  const navigate = useNavigate();
-
   const handleWhatsAppClick = () => {
     const receiverNumber = "+9779706754903";
     if (receiverNumber) {
@@ -24,7 +22,8 @@ const Footer = () => {
   };
 
   return (
-    <div
+    <motion.div
+      variants={textVariant(0.2)}
       id="footer"
       className="bg-black w-full h-[320px] sm:h-[300px] flex flex-col justify-between"
     >
@@ -76,7 +75,7 @@ const Footer = () => {
       <div className="w-full h-[17%] flex items-center justify-center font-light text-[13px] text-white">
         Copyrights. All rights reserved.
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default SectionWrapper(Footer);

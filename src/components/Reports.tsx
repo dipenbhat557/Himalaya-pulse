@@ -6,6 +6,7 @@ import { reports } from "../constants";
 
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
+import { fadeIn } from "../utils/motion";
 
 const Reports = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,7 +16,10 @@ const Reports = () => {
       id="reports"
       className={`${styles.padding} flex flex-col sm:flex-row justify-between items-center w-full h-auto sm:h-[400px]  mt-4`}
     >
-      <div className="w-full sm:w-[30%] h-full flex flex-col justify-between items-center mb-5 sm:mb-0 overflow-y-scroll">
+      <motion.div
+        variants={fadeIn("right", "spring", 0.7, 0.6)}
+        className="w-full sm:w-[30%] h-full flex flex-col justify-between items-center mb-5 sm:mb-0 overflow-y-scroll"
+      >
         <div className="flex w-full justify-start items-center">
           <p
             className={`${styles.sectionHeadText}  text-primary font-semibold  ml-4`}
@@ -50,9 +54,12 @@ const Reports = () => {
         ) : (
           <p className="text-[16px] text-primary font-semibold">Loading...</p>
         )}
-      </div>
+      </motion.div>
 
-      <div className="flex flex-col w-full sm:w-[60%] h-[400px] items-center justify-around border-x-2 pb-9 border-y-2 border-primary rounded-xl p-4">
+      <motion.div
+        variants={fadeIn("left", "spring", 0.7, 0.6)}
+        className="flex flex-col w-full sm:w-[60%] h-[400px] items-center justify-around border-x-2 pb-9 border-y-2 border-primary rounded-xl p-4"
+      >
         <p className="w-[50%] text-[13px] sm:text-[16px] font-semibold h-auto my-4">
           {reports?.[currentIndex]?.title}
         </p>
@@ -69,7 +76,7 @@ const Reports = () => {
             </a>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
