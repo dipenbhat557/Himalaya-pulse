@@ -116,6 +116,7 @@ const hero = () => {
             "Moringa: Nutrient-rich herb with anti-inflammatory, antioxidant
             properties, promoting health and vitality naturally."
           </motion.p>
+
           <button
             type="button"
             className="text-white  z-50   border hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg  text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2"
