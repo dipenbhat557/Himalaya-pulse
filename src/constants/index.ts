@@ -13,8 +13,8 @@ export const navLinks = [
     id: "reports",
     title: "Reports",
   },
-  { id: "about", title: "About" },
-  { id: "contact", title: "Contact" },
+  { id: "aboutus", title: "About" },
+  { id: "contactus", title: "Contact" },
 ];
 
 export const reports = [

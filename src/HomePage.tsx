@@ -13,10 +13,12 @@ const HomePage = () => {
       <Navbar />
       <Hero />
       <Products />
-      <Reports />
+
       <Description />
-      <ContactUs />
+      <Reports />
+
       <AboutUs />
+      <ContactUs />
       <Footer />
     </div>
   );

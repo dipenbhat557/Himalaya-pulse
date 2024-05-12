@@ -4,11 +4,15 @@ import { IoMdInformationCircle } from "react-icons/io";
 import { AiOutlineSearch } from "react-icons/ai";
 import { reports } from "../constants";
 
+import { motion } from "framer-motion";
+import { SectionWrapper } from "../hoc";
+
 const Reports = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <div
+      id="reports"
       className={`${styles.padding} flex flex-col sm:flex-row justify-between items-center w-full h-auto sm:h-[400px]  mt-4`}
     >
       <div className="w-full sm:w-[30%] h-full flex flex-col justify-between items-center mb-5 sm:mb-0 overflow-y-scroll">
@@ -69,4 +73,4 @@ const Reports = () => {
     </div>
   );
 };
-export default Reports;
+export default SectionWrapper(Reports);

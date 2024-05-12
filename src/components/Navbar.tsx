@@ -17,7 +17,7 @@ const Navbar = () => {
         {/* Logo and site title */}
         <Link
           to="/"
-          className="flex w-[40%] h-full  gap-2"
+          className="flex w-[60%] sm:w-[40%] h-full  gap-2"
           onClick={() => {
             window.scrollTo(0, 0);
           }}
@@ -41,12 +41,12 @@ const Navbar = () => {
         <div className="sm:hidden flex flex-1 justify-end items-center">
           {toggle ? (
             <IoClose
-              className="w-[30px] h-[30px] object-contain cursor-pointer"
+              className="w-[30px] h-[30px] text-white object-contain cursor-pointer"
               onClick={() => setToggle(!toggle)}
             />
           ) : (
             <IoMdMenu
-              className="w-[30px] h-[30px] object-contain cursor-pointer"
+              className="w-[30px] h-[30px] text-white object-contain cursor-pointer"
               onClick={() => setToggle(!toggle)}
             />
           )}
@@ -55,7 +55,7 @@ const Navbar = () => {
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-12 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            } p-6 absolute top-12 right-0 mx-4 my-2 bg-primary min-w-[140px] z-10 rounded-xl`}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4">
               {navLinks.map((link) => (

@@ -6,6 +6,9 @@ import { MdMobileScreenShare } from "react-icons/md";
 import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
+import { motion } from "framer-motion";
+import { SectionWrapper } from "../hoc";
+
 const ContactUs = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -66,7 +69,10 @@ const ContactUs = () => {
       );
   };
   return (
-    <div className={`${styles.padding} w-full h-auto flex flex-col gap-4`}>
+    <div
+      id="contactus"
+      className={`${styles.paddingX} py-3 w-full h-auto flex flex-col gap-4`}
+    >
       <div className="border-b-2 border-dashed border-slate-400 w-full" />
       <p
         className={`${styles.sectionHeadText}  text-primary font-semibold  ml-4`}
@@ -76,9 +82,9 @@ const ContactUs = () => {
       <p className="text-[10px] font-semibold text-[#717171]">
         Any question or remarks? Just write us a message!
       </p>
-      <div className="w-full h-auto flex justify-between items-center">
+      <div className="w-full h-auto flex flex-col sm:flex-row justify-between items-center">
         <div
-          className={`w-[30%] text-white flex flex-col h-[400px] rounded-lg relative bg-primary p-10 justify-around`}
+          className={`w-[90%] sm:w-[30%] text-white flex flex-col h-[400px] rounded-lg relative bg-primary p-10 justify-around`}
         >
           <div className="flex flex-col gap-2">
             <p className="text-[22px] font-semibold">Contact Information</p>
@@ -118,7 +124,9 @@ const ContactUs = () => {
           <div className="w-[150px] h-[150px] rounded-full opacity-30 bg-white absolute -bottom-[10%] -right-[10%]" />
           <div className="w-[100px] h-[100px] rounded-full opacity-30 bg-white absolute bottom-[8%] right-[8%]" />
         </div>
-        <div className={`w-[58%] flex flex-col ${styles.padding} gap-8`}>
+        <div
+          className={`w-[90%] sm:w-[58%] flex flex-col ${styles.padding} gap-8`}
+        >
           <div className="w-full font-medium flex justify-between items-center">
             <div className="flex w-[50%] flex-col gap-2">
               <p>First Name</p>
@@ -170,7 +178,7 @@ const ContactUs = () => {
 
           <div className="   flex w-full flex-col gap-2">
             <p className="font-medium">Select Subject</p>
-            <div className="w-full flex  gap-5">
+            <div className="w-full flex gap-3 flex-wrap sm:gap-5">
               <label className="flex gap-2">
                 <input
                   type="radio"
@@ -221,7 +229,7 @@ const ContactUs = () => {
               value={form?.message}
               onChange={handleChange}
               placeholder="Write your message here"
-              className="bg-tertiary  placeholder:text-secondary border-b border-slate-200   w-[90%] outline-none  font-medium"
+              className="bg-tertiary  placeholder:text-secondary border border-slate-200   w-[90%] outline-none  font-medium"
             />
           </div>
         </div>
@@ -229,4 +237,4 @@ const ContactUs = () => {
     </div>
   );
 };
-export default ContactUs;
+export default SectionWrapper(ContactUs);
