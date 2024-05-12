@@ -32,7 +32,7 @@ const Navbar = () => {
               key={link.id}
               className={`text-white  text-[12px] font-light cursor-pointer`}
             >
-              <a href={`#${link.id}`}>{link.title.toUpperCase()}</a>
+              <a href={`/${link.id}`}>{link.title.toUpperCase()}</a>
             </li>
           ))}
         </ul>
@@ -66,7 +66,7 @@ const Navbar = () => {
                     setToggle(!toggle);
                   }}
                 >
-                  <a href={`#${link.id}`}>{link.title}</a>
+                  <a href={`/${link.id}`}>{link.title}</a>
                 </li>
               ))}
             </ul>
