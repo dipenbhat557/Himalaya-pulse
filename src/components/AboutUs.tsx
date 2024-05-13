@@ -15,10 +15,10 @@ const bgClip = {
 const AboutUs = () => {
   return (
     <>
-      <Navbar />
+      <Navbar isHome={false} />
       <div
         id="aboutus"
-        className={`w-full h-[800px] sm:h-[450px] flex flex-col sm:flex-row justify-between ${styles.paddingY}`}
+        className={`w-full h-[800px] sm:h-[413px] flex flex-col sm:flex-row justify-between ${styles.paddingY}`}
       >
         <motion.div
           variants={fadeIn("right", "spring", 0.7, 0.6)}

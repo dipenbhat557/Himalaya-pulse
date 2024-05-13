@@ -6,10 +6,13 @@ import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 
 import "../index.css";
+import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 
 const hero = () => {
   const [currentElement, setCurrentElement] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   const handleScroll = () => {
     if (window.scrollY >= 105) {
@@ -38,7 +41,7 @@ const hero = () => {
 
   return (
     <>
-      <div className="w-full   h-screen mt-[80px] sm:h-[616px]  overflow-hidden">
+      <div className="w-full relative  h-screen    overflow-hidden">
         <div className="photo-container">
           {heroElements.map((element, index) => (
             <div
@@ -62,6 +65,7 @@ const hero = () => {
             </div>
           ))}
         </div>
+        <Navbar isHome={true} />
 
         <div className="w-full mt-[80px] z-30 h-full bg-black bg-opacity-60 absolute top-0 left-0 flex flex-col justify-between text-white"></div>
 
@@ -118,6 +122,7 @@ const hero = () => {
           </motion.p>
 
           <button
+            onClick={() => navigate("/contactus")}
             type="button"
             className="text-white  z-50   border hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg  text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2"
           >

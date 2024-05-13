@@ -8,8 +8,8 @@ import Footer from "./Footer";
 
 const Products = () => {
   return (
-    <div className="flex flex-col justify-between mt-16">
-      <Navbar />
+    <div className="flex flex-col h-screen overflow-y-hidden justify-between ">
+      <Navbar isHome={false} />
       <div
         id="products"
         className={`${styles.paddingX} py-2 w-full h-auto flex flex-col gap-2`}
@@ -20,14 +20,13 @@ const Products = () => {
         >
           Products
         </motion.p>
-        <div className="w-full border-b border-primary" />
 
         <div className="w-full flex flex-col sm:flex-row gap-4 sm:gap-0 sm:justify-around items-center">
           <motion.div
             variants={fadeIn("right", "spring", 0.7, 0.5)}
-            className={`p-6 w-[80%] sm:w-[30%] rounded-3xl shadow-lg shadow-black flex flex-col gap-4`}
+            className={`p-6 w-[80%] sm:w-[30%] rounded-3xl shadow-lg shadow-black flex flex-col gap-2`}
           >
-            <div className="w-full h-[150px]">
+            <div className="w-full h-[100px]">
               {" "}
               <img
                 className="w-full h-full object-contain"
@@ -46,9 +45,9 @@ const Products = () => {
           </motion.div>
           <motion.div
             variants={fadeIn("left", "spring", 0.7, 0.5)}
-            className={`p-6 w-[80%] sm:w-[30%] rounded-3xl shadow-lg shadow-black flex flex-col gap-4`}
+            className={`p-6 w-[80%] sm:w-[30%] rounded-3xl shadow-lg shadow-black flex flex-col gap-2`}
           >
-            <div className="w-full h-[150px]">
+            <div className="w-full h-[100px]">
               {" "}
               <img
                 className="w-full h-full object-contain"

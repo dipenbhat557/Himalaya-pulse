@@ -71,13 +71,12 @@ const ContactUs = () => {
       );
   };
   return (
-    <>
-      <Navbar />
+    <div className="h-screen overflow-y-hidden">
+      <Navbar isHome={false} />
       <div
         id="contactus"
         className={`${styles.paddingX} py-3 w-full h-auto flex flex-col gap-4`}
       >
-        <div className="border-b-2 border-dashed border-slate-400 w-full" />
         <motion.p
           variants={textVariant(0.2)}
           className={`${styles.sectionHeadText}  text-primary font-semibold  ml-4`}
@@ -90,7 +89,7 @@ const ContactUs = () => {
         >
           Any question or remarks? Just write us a message!
         </motion.p>
-        <div className="w-full h-auto flex flex-col sm:flex-row justify-between items-center">
+        <div className="w-full h-auto flex flex-col sm:flex-row justify-between items-start">
           <motion.div
             variants={fadeIn("right", "spring", 0.7, 0.6)}
             className={`w-[90%] sm:w-[30%] text-white flex flex-col h-[400px] rounded-lg relative bg-primary p-10 justify-around`}
@@ -135,7 +134,7 @@ const ContactUs = () => {
           </motion.div>
           <motion.div
             variants={fadeIn("left", "spring", 0.7, 0.6)}
-            className={`w-[90%] sm:w-[58%] flex flex-col ${styles.padding} gap-8`}
+            className={`w-[90%] sm:w-[58%] flex flex-col gap-4`}
           >
             <div className="w-full font-medium flex justify-between items-center">
               <div className="flex w-[50%] flex-col gap-2">
@@ -239,7 +238,7 @@ const ContactUs = () => {
                 value={form?.message}
                 onChange={handleChange}
                 placeholder="Write your message here"
-                className="bg-tertiary  placeholder:text-secondary border border-slate-200   w-[90%] outline-none  font-medium"
+                className="bg-tertiary p-3 rounded-lg placeholder:text-secondary border border-slate-200   w-[90%] outline-none  font-medium"
               />
             </div>
             <button
@@ -251,7 +250,7 @@ const ContactUs = () => {
           </motion.div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default SectionWrapper(ContactUs);

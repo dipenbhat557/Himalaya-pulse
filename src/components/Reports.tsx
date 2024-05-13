@@ -15,14 +15,14 @@ const Reports = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar isHome={false} />
       <div
         id="reports"
-        className={`${styles.padding} flex flex-col sm:flex-row justify-between items-center w-full h-auto sm:h-[400px]  mt-4`}
+        className={`${styles.padding} flex flex-col sm:flex-row justify-between items-center w-full h-auto sm:h-[397px]  mt-4`}
       >
         <motion.div
           variants={fadeIn("right", "spring", 0.7, 0.6)}
-          className="w-full sm:w-[30%] h-full flex flex-col justify-between items-center mb-5 sm:mb-0 overflow-y-scroll"
+          className="w-full sm:w-[40%] h-full flex flex-col justify-between items-center mb-5 sm:mb-0 overflow-y-scroll"
         >
           <div className="flex w-full justify-start items-center">
             <p
@@ -64,7 +64,7 @@ const Reports = () => {
 
         <motion.div
           variants={fadeIn("left", "spring", 0.7, 0.6)}
-          className="flex flex-col w-full sm:w-[60%] h-[400px] items-center justify-around border-x-2 pb-9 border-y-2 border-primary rounded-xl p-4"
+          className="flex flex-col w-full sm:w-[40%] h-[330px] items-center justify-around border-x-2 pb-9 border-y-2 border-primary rounded-xl p-4"
         >
           <p className="w-[50%] text-[13px] sm:text-[16px] font-semibold h-auto my-4">
             {reports?.[currentIndex]?.title}

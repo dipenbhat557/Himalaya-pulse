@@ -6,12 +6,14 @@ import { logo } from "../assets";
 import { IoClose } from "react-icons/io5";
 import { IoMdMenu } from "react-icons/io";
 
-const Navbar = () => {
+const Navbar = ({ isHome }: { isHome: boolean }) => {
   const [toggle, setToggle] = useState(false);
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center  fixed top-0 z-50 bg-primary`}
+      className={` w-full flex items-center relative  top-0  ${
+        isHome ? "bg-opacity-60 bg-black" : "bg-primary"
+      }`}
     >
       <div className="w-full h-[80px]  flex justify-around items-center ">
         {/* Logo and site title */}
@@ -30,7 +32,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <li
               key={link.id}
-              className={`text-white  text-[12px] font-light cursor-pointer`}
+              className={`text-white  hover:text-slate-400  text-[12px] font-medium cursor-pointer`}
             >
               <a href={`/${link.id}`}>{link.title.toUpperCase()}</a>
             </li>
