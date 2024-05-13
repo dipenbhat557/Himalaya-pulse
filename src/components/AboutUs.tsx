@@ -1,11 +1,13 @@
-import { leaf2 } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
+import { abBg1, abBg2, abBg3 } from "../assets";
+const heroElements = [abBg1, abBg2, abBg3];
 
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { useEffect, useState } from "react";
 
 const bgClip = {
   clipPath:
@@ -13,6 +15,17 @@ const bgClip = {
 };
 
 const AboutUs = () => {
+  const [currentElement, setCurrentElement] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentElement(
+        (prevElement) => (prevElement + 1) % heroElements.length
+      );
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <>
       <Navbar isHome={false} />
@@ -22,27 +35,32 @@ const AboutUs = () => {
       >
         <motion.div
           variants={fadeIn("right", "spring", 0.7, 0.6)}
-          className="w-full sm:w-[35%] flex items-center justify-center h-[50%] sm:h-full relative"
+          className="w-full sm:w-[35%] flex items-center mt-7  justify-center left-8 h-[50%] sm:h-full relative"
         >
-          <div
-            className="w-full h-full sm:left-6 absolute bg-gradient-to-b to-[#0C492878] from-primary  -z-10"
-            style={bgClip}
-          />
-
-          <div className="w-full h-full  absolute z-10">
-            <img
-              src={leaf2}
-              className="w-full h-full object-contain"
-              alt="leaf-2"
-            />
-          </div>
-          <motion.p
-            variants={textVariant(0.9)}
-            className="text-[30px] sm:text-[45px] w-[70%] text-center z-20 text-white font-light"
-          >
-            Authenticity meets Quality
-          </motion.p>
+          {heroElements.map((element, index) => (
+            <div
+              key={index}
+              className={`absolute w-full h-full  ${
+                index === currentElement ? "visible" : "hidden"
+              }`}
+            >
+              <img
+                src={element}
+                alt="Background Photo"
+                className={`photo-slide w-full h-full photo-element rounded-2xl ${
+                  index === currentElement ? "photo-fade-in" : "photo-fade-out"
+                }`}
+                style={{
+                  objectFit: "cover",
+                  width: "100%",
+                  height: "100%",
+                }}
+              />
+              <div className="w-full rounded-2xl z-30 h-full bg-black bg-opacity-40 absolute top-0 left-0 " />
+            </div>
+          ))}
         </motion.div>
+
         <div className="w-full sm:w-[65%] h-[500px] sm:h-auto flex flex-col items-center gap-3">
           <motion.p
             variants={textVariant(0.6)}

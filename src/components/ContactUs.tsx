@@ -6,9 +6,8 @@ import { MdMobileScreenShare } from "react-icons/md";
 import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
+
 import Navbar from "./Navbar";
 
 const ContactUs = () => {
@@ -77,21 +76,16 @@ const ContactUs = () => {
         id="contactus"
         className={`${styles.paddingX} py-3 w-full h-auto flex flex-col gap-4`}
       >
-        <motion.p
-          variants={textVariant(0.2)}
+        <p
           className={`${styles.sectionHeadText}  text-primary font-semibold  ml-4`}
         >
           Contact Us
-        </motion.p>
-        <motion.p
-          variants={textVariant(0.3)}
-          className="text-[10px] font-semibold text-[#717171]"
-        >
+        </p>
+        <p className="text-[10px] font-semibold text-[#717171]">
           Any question or remarks? Just write us a message!
-        </motion.p>
+        </p>
         <div className="w-full h-auto flex flex-col sm:flex-row justify-between items-start">
-          <motion.div
-            variants={fadeIn("right", "spring", 0.7, 0.6)}
+          <div
             className={`w-[90%] sm:w-[30%] text-white flex flex-col h-[400px] rounded-lg relative bg-primary p-10 justify-around`}
           >
             <div className="flex flex-col gap-2">
@@ -129,13 +123,8 @@ const ContactUs = () => {
                 className="cursor-pointer text-white hover:text-black bg-yellow-400 p-1 text-2xl rounded-full  hover:bg-white"
               />
             </div>
-            <div className="w-[150px] h-[150px] rounded-full opacity-30 bg-white absolute -bottom-[10%] -right-[10%]" />
-            <div className="w-[100px] h-[100px] rounded-full opacity-30 bg-white absolute bottom-[8%] right-[8%]" />
-          </motion.div>
-          <motion.div
-            variants={fadeIn("left", "spring", 0.7, 0.6)}
-            className={`w-[90%] sm:w-[58%] flex flex-col gap-4`}
-          >
+          </div>
+          <div className={`w-[90%] sm:w-[58%] flex flex-col gap-4`}>
             <div className="w-full font-medium flex justify-between items-center">
               <div className="flex w-[50%] flex-col gap-2">
                 <p>First Name</p>
@@ -247,7 +236,7 @@ const ContactUs = () => {
             >
               {loading ? "Sending Message..." : "Send Message"}
             </button>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

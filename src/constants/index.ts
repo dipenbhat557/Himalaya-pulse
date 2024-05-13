@@ -1,4 +1,5 @@
-import { r1 } from "../assets";
+import { WiHail } from "react-icons/wi";
+import { r2 ,r1} from "../assets";
 
 export const navLinks = [
   {
@@ -15,9 +16,9 @@ export const navLinks = [
   },
   { id: "aboutus", title: "About" },
   { id: "contactus", title: "Contact" },
-];
+]; WiHail
 
 export const reports = [
-  { title: "Arogya went rogya", img: r1 },
-  { title: "Avash went shilajeet", img: r1 },
+  { title: "Himalaya Pulse - Healifera  ",batchno:"HPNP/002/080-081", img: r2 },
+  { title: "Himalaya Pulse - Shilajit ",batchno:"HPNP/001/080-081", img: r1 },
 ];

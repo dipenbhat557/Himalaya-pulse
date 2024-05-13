@@ -34,20 +34,20 @@ const Products = () => {
                 alt="product-1"
               />
             </div>
-            <p className="text-primary text-[25px]">HEALIFERA</p>
+            <p className="text-primary text-[25px]">
+              Himalaya Pulse - HEALIFERA
+            </p>
             <p className="text-[14px] sm:leading-loose">
-              Healifera, a blend of Moringa leaves powder and Stevia, offers
-              organic benefits. Moringa is rich in nutrients, fights
-              inflammation, and aids blood sugar and cholesterol. Stevia adds
-              sweetness. Derived from Moringa Oleifera, it's sourced from
-              organically grown plants in Nepal.
+              Healifera: Moringa and Stevia blend for organic health benefits.
+              Moringa fights inflammation, aids blood sugar/cholesterol. Stevia
+              adds sweetness. Organically sourced from Nepal.
             </p>
           </motion.div>
           <motion.div
             variants={fadeIn("left", "spring", 0.7, 0.5)}
             className={`p-6 w-[80%] sm:w-[30%] rounded-3xl shadow-lg shadow-black flex flex-col gap-2`}
           >
-            <div className="w-full h-[100px]">
+            <div className="w-full h-[119px]">
               {" "}
               <img
                 className="w-full h-full object-contain"
@@ -59,11 +59,9 @@ const Products = () => {
               Himalaya Pulse - Shilajit 
             </p>
             <p className="text-[14px] sm:leading-loose">
-              Shilajit, a natural mineral compound from the Himalayas, sourced
-              by Himalaya Pulse, undergoes rigorous processing. It offers
-              benefits like anti-aging, heart health, energy, testosterone
-              boost, and fertility support, validated by lab reports from ISO
-              Certified Laboratory and Research Centre.
+              Himalaya Pulse sources Shilajit, a Himalayan mineral compound,
+              with validated benefits including anti-aging, heart health,
+              energy, testosterone boost, and fertility support.
             </p>
           </motion.div>
         </div>
