@@ -5,7 +5,6 @@ import { IoLocationSharp, IoMail } from "react-icons/io5";
 import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
-import Navbar from "./Navbar";
 
 const Footer = () => {
   const handleWhatsAppClick = () => {

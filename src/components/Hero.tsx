@@ -3,31 +3,17 @@ import { bg1, bg2, bg3 } from "../assets";
 const heroElements = [bg2, bg1, bg3];
 
 import { motion } from "framer-motion";
-import { fadeIn, textVariant } from "../utils/motion";
+import { fadeIn } from "../utils/motion";
 
 import "../index.css";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
+import { MdMail } from "react-icons/md";
+import { SectionWrapper } from "../hoc";
 
 const hero = () => {
   const [currentElement, setCurrentElement] = useState(0);
-  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
-
-  const handleScroll = () => {
-    if (window.scrollY >= 105) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -67,9 +53,9 @@ const hero = () => {
         </div>
         <Navbar isHome={true} />
 
-        <div className="w-full mt-[80px] z-30 h-full bg-black bg-opacity-60 absolute top-0 left-0 flex flex-col justify-between text-white"></div>
+        <div className="w-full mt-[80px] z-30 h-full bg-black bg-opacity-60 absolute top-0 left-0 " />
 
-        <div className="flex flex-col justify-center items-center gap-6 h-[20%]  absolute left-[10%]  sm:h-full w-full text-center  sm:w-[40%]">
+        <div className="flex flex-col justify-start top-[35%] items-center gap-6 h-[20%]  absolute left-[10%] sm:h-full w-full text-center  sm:w-[40%]">
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -113,38 +99,19 @@ const hero = () => {
             ))}
           </motion.span>
 
-          <motion.p
-            variants={textVariant(0.3)}
-            className="hidden sm:flex w-[80%] z-20 font-light text-[20px] leading-loose text-white font-serif"
-          >
-            "Moringa: Nutrient-rich herb with anti-inflammatory, antioxidant
-            properties, promoting health and vitality naturally."
-          </motion.p>
-
-          <button
+          <motion.button
+            variants={fadeIn("right", "spring", 0.5, 0.6)}
             onClick={() => navigate("/contactus")}
             type="button"
-            className="text-white  z-50   border hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg  text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2"
+            className="text-white  z-50 gap-3  border hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg  text-sm px-5 py-2 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2"
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mx-2"
-            >
-              <path
-                d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm3.519 0L12 11.671 18.481 6H5.52zM20 7.329l-7.341 6.424a1 1 0 0 1-1.318 0L4 7.329V18h16V7.329z"
-                fill="#ffffff"
-              />
-            </svg>
+            <MdMail className="text-2xl" />
             Contact Us
-          </button>
+          </motion.button>
         </div>
       </div>
     </>
   );
 };
 
-export default hero;
+export default SectionWrapper(hero);
