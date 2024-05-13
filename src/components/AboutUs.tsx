@@ -35,7 +35,7 @@ const AboutUs = () => {
       >
         <motion.div
           variants={fadeIn("right", "spring", 0.7, 0.6)}
-          className="w-full sm:w-[35%] flex items-center mt-7  justify-center left-8 h-[50%] sm:h-full relative"
+          className="w-full sm:w-[35%] flex items-center mt-7  justify-center left-0 sm:left-6 h-[50%] sm:h-full relative"
         >
           {heroElements.map((element, index) => (
             <div
