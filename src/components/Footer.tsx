@@ -25,7 +25,7 @@ const Footer = () => {
     <motion.div
       variants={textVariant(0.2)}
       id="footer"
-      className="bg-black w-full h-[320px] sm:h-[210px] flex flex-col justify-between"
+      className="bg-black w-full h-[320px] sm:h-[300px] flex flex-col justify-between"
     >
       <div className="w-full h-[90%] flex items-center justify-around">
         <div className="w-[50%] sm:w-[30%] h-full flex flex-col items-center gap-4">
