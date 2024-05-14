@@ -11,13 +11,13 @@ const products = [
   {
     title: "Himalaya Pulse - HEALIFERA",
     content:
-      "Healifera: Moringa and Stevia blend for organic health benefits. Moringa fights inflammation, aids blood sugar/cholesterol. Stevia adds sweetness. Organically sourced from Nepal.",
+      "Healifera is an organic mixture of naturally beneficial plants. Healifera consists mostly of Moringa leaves powder which are known to be rich in vitamins, minerals, amino acids, and antioxidants. Moringa leaves powder helps in fighting inflammation, lowers blood sugar levels and cholesterol. The plant is known as the “Super Food” for its many other beneficial health protective properties. Stevia is a natural sweetener and has many health benefits and adds a bit of sweetness to the mixture for easy consumption. Heal-i-fera or as mentioned Healifera is a derived name from Moringa Oleifera which is the scientific name of Moringa. Our Moringa leaves powder are from organically grown plants in Nepal.",
     img: p1,
   },
   {
     title: "Himalaya Pulse - Shilajit",
     content:
-      "Himalaya Pulse sources Shilajit, a Himalayan mineral compound, with validated benefits including anti-aging, heart health, energy, testosterone boost, and fertility support.",
+      "Shilajit is a naturally found organic mineral compound found in the Himalayan Ranges of Nepal, India, Afghanistan and elsewhere. Himalaya Pulse - Shilajit is naturally sourced from the mountainous regions of Nepal and is thoroughly processed for consumption with lab reports from ISO Certified Laboratory and Research Centre. Shilajit has many beneficial factors such as aging, heart health, energy boost, boosts testosterone, supports fertility etc.",
     img: p2,
   },
 ];
