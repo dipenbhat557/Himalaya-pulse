@@ -8,6 +8,7 @@ import { IoMdArrowDropdown, IoMdMenu } from "react-icons/io";
 const Navbar = ({ isHome }: { isHome: boolean }) => {
   const [toggle, setToggle] = useState(false);
   const [showDropdown1, setShowDropdown1] = useState(false);
+  const [showProducts, setShowProducts] = useState(false);
   let timeoutId1: NodeJS.Timeout;
   const navigate = useNavigate();
 
@@ -92,29 +93,50 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 absolute top-12 right-0 mx-4 my-2 bg-primary min-w-[140px] z-10 rounded-xl`}
+            } p-6 absolute top-12 right-0 mx-4 my-2 bg-primary min-w-[140px] z-50 rounded-xl`}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4">
               {navLinks.map((link) => (
                 <li
                   key={link.id}
                   className={`text-white`}
-                  onMouseEnter={() => {
-                    if (link.title === "Products") {
-                      setShowDropdown1(true);
-                    }
-                  }}
-                  onMouseLeave={() => {
-                    if (link.title === "Products") {
-                      handleMouseLeave1();
-                    }
-                  }}
                   onClick={() => {
-                    navigate(`/${link.id.toLowerCase()}`);
-                    setToggle(!toggle);
+                    if (link.title === "Products") {
+                      setShowProducts(!showProducts);
+                    } else {
+                      navigate(`/${link.id.toLowerCase()}`);
+                      setToggle(false);
+                    }
                   }}
                 >
-                  <Link to={`/${link.id.toLowerCase()}`}>{link.title}</Link>
+                  <div>
+                    {link.title}
+                    {link.title === "Products" && (
+                      <IoMdArrowDropdown className="inline" />
+                    )}
+                  </div>
+                  {link.title === "Products" && showProducts && (
+                    <div className="w-full pb-3 h-[70px] flex flex-col">
+                      <p
+                        className="p-2"
+                        onClick={() => {
+                          navigate("/products", { state: { p: 0 } });
+                          setToggle(false);
+                        }}
+                      >
+                        Moringa
+                      </p>
+                      <p
+                        className="p-2"
+                        onClick={() => {
+                          navigate("/products", { state: { p: 1 } });
+                          setToggle(false);
+                        }}
+                      >
+                        Shilajeet
+                      </p>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
@@ -134,7 +156,11 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
                 key={index}
                 className="hover:bg-[#80b38930] px-2 py-1 rounded-sm text-[14px] cursor-pointer"
               >
-                <p onClick={() => navigate(`/${p.toLowerCase()}`)}>{p}</p>
+                <p
+                  onClick={() => navigate("/products", { state: { p: index } })}
+                >
+                  {p}
+                </p>
               </li>
             ))}
           </ul>

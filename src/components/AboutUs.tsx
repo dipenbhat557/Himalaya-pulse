@@ -27,15 +27,14 @@ const AboutUs = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <>
+    <div className="h-auto sm:h-[58.5vh]">
       <Navbar isHome={false} />
       <div
-        id="aboutus"
-        className={`w-full h-[800px] sm:h-[413px] flex flex-col sm:flex-row justify-between ${styles.paddingY}`}
+        className={`w-full h-full flex flex-col sm:flex-row justify-between ${styles.paddingY}`}
       >
         <motion.div
           variants={fadeIn("right", "spring", 0.7, 0.6)}
-          className="w-full sm:w-[35%] flex items-center mt-7  justify-center left-0 sm:left-6 h-[50%] sm:h-full relative"
+          className="w-full sm:w-[35%] flex items-center mt-7  justify-center left-0 sm:left-6 h-[50%] sm:h-full  relative"
         >
           {heroElements.map((element, index) => (
             <div
@@ -88,7 +87,7 @@ const AboutUs = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 export default SectionWrapper(AboutUs);

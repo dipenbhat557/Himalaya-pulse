@@ -13,11 +13,11 @@ const Reports = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <>
+    <div className="h-auto sm:h-[56.5vh]">
       <Navbar isHome={false} />
       <div
         id="reports"
-        className={`${styles.padding} flex flex-col sm:flex-row justify-between items-center w-full h-auto sm:h-[397px]  mt-4`}
+        className={`${styles.padding} flex flex-col sm:flex-row justify-between items-center w-full h-full  mt-4`}
       >
         <div className="w-full sm:w-[40%] h-full flex flex-col justify-between items-center mb-5 sm:mb-0 overflow-y-scroll">
           <div className="flex w-full justify-start items-center">
@@ -58,7 +58,7 @@ const Reports = () => {
           )}
         </div>
 
-        <div className="flex flex-col w-full sm:w-[40%] h-[370px] items-center justify-around border-x-2 pb-9 border-y-2 border-primary rounded-xl p-4">
+        <div className="flex flex-col w-full sm:w-[40%] h-[420px] sm:h-[370px] items-center justify-around border-x-2 pb-9 border-y-2 border-primary rounded-xl p-4">
           <p className="w-[50%] text-[13px] sm:text-[16px] font-semibold h-auto my-1">
             {reports?.[currentIndex]?.title}
           </p>
@@ -79,7 +79,7 @@ const Reports = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 export default SectionWrapper(Reports);

@@ -36,8 +36,8 @@ const ContactUs = () => {
 
     emailjs
       .send(
-        "service_htp2klw",
-        "template_a9c3yzv",
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: `${form.fName} ${form.lName}`,
           to_name: "Himalaya Pulse",
@@ -45,7 +45,7 @@ const ContactUs = () => {
           to_email: "bhattadipen557@gmail.com",
           message: form.message,
         },
-        "70gtdMrv58XYFp0DP"
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
 
       .then(
@@ -70,7 +70,7 @@ const ContactUs = () => {
       );
   };
   return (
-    <div className="h-screen overflow-y-hidden">
+    <div className="h-screen sm:overflow-y-hidden">
       <Navbar isHome={false} />
       <div
         id="contactus"
@@ -84,7 +84,7 @@ const ContactUs = () => {
         <p className="text-[10px] font-semibold text-[#717171]">
           Any question or remarks? Just write us a message!
         </p>
-        <div className="w-full h-auto flex flex-col sm:flex-row justify-between items-start">
+        <div className="w-full h-auto flex flex-col gap-4 sm:flex-row justify-between items-start">
           <div
             className={`w-[90%] sm:w-[30%] text-white flex flex-col h-[400px] rounded-lg relative bg-primary p-10 justify-around`}
           >

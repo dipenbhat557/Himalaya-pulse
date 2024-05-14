@@ -55,14 +55,14 @@ const hero = () => {
 
         <div className="w-full mt-[80px] z-30 h-full bg-black bg-opacity-60 absolute top-0 left-0 " />
 
-        <div className="flex flex-col justify-start top-[35%] items-center gap-6 h-[20%]  absolute left-[10%] sm:h-full w-full text-center  sm:w-[48%]">
+        <div className="flex flex-col justify-start top-[35%] items-center gap-6 h-[20%]  absolute  sm:left-[10%] sm:h-full w-full text-center  sm:w-[48%]">
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="w-[100%] font-medium tracking-wider z-40 text-[35px] sm:text-[65px] text-white font-serif"
+            className="w-[100%] font-medium tracking-wider  z-40 text-[35px] sm:text-[65px] text-white font-serif"
           >
-            {`"Authenticity meets `.split("").map((char, index) => (
+            {"Authenticity meets ".split("").map((char, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 0 }}
@@ -73,25 +73,14 @@ const hero = () => {
                 {char === " " ? "\u00A0" : char}
               </motion.span>
             ))}
+            <br />
 
-            {" ".split("").map((char, index) => (
+            {"Quality".split("").map((char, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.1 * index, duration: 0.1 }}
-                style={{ display: "inline-block" }}
-              >
-                {char === " " ? "\u00A0" : char}
-              </motion.span>
-            ))}
-
-            {'Quality"'.split("").map((char, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.1 * index, duration: 0.1 }}
+                transition={{ delay: 0.2 * index, duration: 0.1 }}
                 style={{ display: "inline-block" }}
               >
                 {char === " " ? "\u00A0" : char}

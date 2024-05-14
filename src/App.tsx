@@ -7,15 +7,17 @@ import ContactUs from "./components/ContactUs";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/reports" element={<Reports />} />
-        <Route path="/contactus" element={<ContactUs />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/contactus" element={<ContactUs />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
