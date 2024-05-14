@@ -2,16 +2,14 @@ import { useState } from "react";
 import { styles } from "../styles";
 import * as emailjs from "emailjs-com";
 import { IoLocationSharp, IoMail } from "react-icons/io5";
-import { MdMobileScreenShare } from "react-icons/md";
-import { FaDiscord, FaInstagram, FaTwitter } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { MdMail, MdMobileScreenShare } from "react-icons/md";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 import { SectionWrapper } from "../hoc";
 
 import Navbar from "./Navbar";
 
 const ContactUs = () => {
-  const navigate = useNavigate();
   const [form, setForm] = useState({
     fName: "",
     lName: "",
@@ -25,8 +23,20 @@ const ContactUs = () => {
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
+  };
 
-    console.log("on change data is ", form);
+  const handleWhatsAppClick = () => {
+    const receiverNumber = "+9779706754903";
+    if (receiverNumber) {
+      const whatsappURL = `https://wa.me/${receiverNumber}`;
+      window.open(whatsappURL, "_blank");
+    } else {
+      console.error("WhatsApp number not provided");
+    }
+  };
+
+  const handleMailButtonClick = () => {
+    window.location.href = "mailto:info@himalayapulse.com";
   };
 
   const handleSubmit = (e: any) => {
@@ -42,7 +52,7 @@ const ContactUs = () => {
           from_name: `${form.fName} ${form.lName}`,
           to_name: "Himalaya Pulse",
           from_email: form.email,
-          to_email: "bhattadipen557@gmail.com",
+          to_email: "info@himalayapulse.com",
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -100,26 +110,42 @@ const ContactUs = () => {
                 Himalaya Pulse Pvt. Ltd. Rapti-04, Dang, Nepal.
               </p>
             </div>
-            <div className="flex gap-5">
-              <MdMobileScreenShare className="text-3xl text-white rounded-lg p-1" />
+            <div
+              onClick={handleWhatsAppClick}
+              className="cursor-pointer flex gap-5"
+            >
+              <MdMobileScreenShare className=" text-3xl text-white rounded-lg p-1" />
               <p className="w-[70%]">+9779706754903</p>
             </div>
-            <div className="flex gap-5">
+            <div
+              onClick={handleMailButtonClick}
+              className="cursor-pointer flex gap-5"
+            >
               <IoMail className="text-3xl  text-white rounded-lg p-1" />
               <p className="w-[70%]">info@himalayapulse.com</p>
             </div>
 
             <div className="flex gap-5">
-              <FaTwitter
-                onClick={() => navigate("#")}
+              <FaFacebook
+                onClick={() =>
+                  window.open(
+                    "https://www.facebook.com/profile.php?id=61551597487198",
+                    "_blank"
+                  )
+                }
                 className="cursor-pointer text-white hover:text-black bg-yellow-400 p-1 text-2xl rounded-full  hover:bg-white"
               />
               <FaInstagram
-                onClick={() => navigate("#")}
-                className="cursor-pointer text-white hover:text-black bg-yellow-400 p-1 text-2xl rounded-full  hover:bg-white"
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/himalayapulse/",
+                    "_blank"
+                  )
+                }
+                className="cursor-pointer text-white hover:text-black bg-yellow-400 p-1 text-2xl rounded-full hover:bg-white"
               />
-              <FaDiscord
-                onClick={() => navigate("#")}
+              <MdMail
+                onClick={handleMailButtonClick}
                 className="cursor-pointer text-white hover:text-black bg-yellow-400 p-1 text-2xl rounded-full  hover:bg-white"
               />
             </div>

@@ -9,11 +9,6 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useEffect, useState } from "react";
 
-const bgClip = {
-  clipPath:
-    "polygon(0 32%, 11% 17%, 29% 11%, 56% 16%, 78% 9%, 92% 15%, 100% 49%, 95% 86%, 75% 97%, 42% 97%, 22% 95%, 0% 85%)",
-};
-
 const AboutUs = () => {
   const [currentElement, setCurrentElement] = useState(0);
 
