@@ -6,7 +6,7 @@ export const navLinks = [
     title: "Home",
   },
   {
-    id: "products",
+    id: "#",
     title: "Products",
   },
   {

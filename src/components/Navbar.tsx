@@ -1,24 +1,40 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { navLinks } from "../constants";
 import { logo } from "../assets";
 import { IoClose } from "react-icons/io5";
-import { IoMdMenu } from "react-icons/io";
+import { IoMdArrowDropdown, IoMdMenu } from "react-icons/io";
 
 const Navbar = ({ isHome }: { isHome: boolean }) => {
   const [toggle, setToggle] = useState(false);
+  const [showDropdown1, setShowDropdown1] = useState(false);
+  let timeoutId1: NodeJS.Timeout;
+  const navigate = useNavigate();
+
+  const handleMouseLeave1 = () => {
+    timeoutId1 = setTimeout(() => {
+      setShowDropdown1(false);
+    }, 1000);
+  };
+
+  const handleMouseOverDropdown1 = () => {
+    setShowDropdown1(true);
+    if (timeoutId1) {
+      clearTimeout(timeoutId1);
+    }
+  };
 
   return (
     <nav
-      className={` w-full flex items-center relative  top-0  ${
+      className={`w-full flex items-center relative top-0 ${
         isHome ? "bg-opacity-60 bg-black" : "bg-primary"
       }`}
     >
-      <div className="w-full h-[80px]  flex justify-around items-center ">
+      <div className="w-full h-[80px] flex justify-around items-center">
         {/* Logo and site title */}
         <Link
           to="/"
-          className="flex w-[60%] sm:w-[40%] h-full  gap-2"
+          className="flex w-[60%] sm:w-[40%] h-full gap-2"
           onClick={() => {
             window.scrollTo(0, 0);
           }}
@@ -27,13 +43,33 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
         </Link>
 
         {/* Desktop navigation */}
-        <ul className="list-none hidden  sm:flex flex-row gap-10">
+        <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((link) => (
             <li
               key={link.id}
-              className={`text-white  hover:text-slate-400  text-[12px] font-medium cursor-pointer`}
+              className={`text-white hover:text-slate-400 text-[12px] font-medium cursor-pointer`}
+              onMouseEnter={() => {
+                if (link.title === "Products") {
+                  setShowDropdown1(true);
+                }
+              }}
+              onMouseLeave={() => {
+                if (link.title === "Products") {
+                  handleMouseLeave1();
+                }
+              }}
             >
-              <a href={`/${link.id}`}>{link.title.toUpperCase()}</a>
+              <Link to={`/${link.id.toLowerCase()}`}>
+                {" "}
+                {link.title === "Products" ? (
+                  <>
+                    {link.title.toUpperCase()}
+                    <IoMdArrowDropdown className={`inline  `} />
+                  </>
+                ) : (
+                  <>{link.title.toUpperCase()}</>
+                )}
+              </Link>
             </li>
           ))}
         </ul>
@@ -63,17 +99,47 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
                 <li
                   key={link.id}
                   className={`text-white`}
+                  onMouseEnter={() => {
+                    if (link.title === "Products") {
+                      setShowDropdown1(true);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (link.title === "Products") {
+                      handleMouseLeave1();
+                    }
+                  }}
                   onClick={() => {
+                    navigate(`/${link.id.toLowerCase()}`);
                     setToggle(!toggle);
                   }}
                 >
-                  <a href={`/${link.id}`}>{link.title}</a>
+                  <Link to={`/${link.id.toLowerCase()}`}>{link.title}</Link>
                 </li>
               ))}
             </ul>
           </div>
         </div>
       </div>
+
+      {showDropdown1 && (
+        <div
+          className="dropdown-menu top-14 p-3 rounded-b-xl rounded-r-xl left-[72%] shadow-md shadow-black text-black bg-white w-[16%] absolute z-50"
+          onMouseLeave={() => setShowDropdown1(false)}
+          onMouseOver={() => handleMouseOverDropdown1()}
+        >
+          <ul className="w-full">
+            {["Moringa", "Shilajeet"].map((p, index) => (
+              <li
+                key={index}
+                className="hover:bg-[#80b38930] px-2 py-1 rounded-sm text-[14px] cursor-pointer"
+              >
+                <p onClick={() => navigate(`/${p.toLowerCase()}`)}>{p}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };
