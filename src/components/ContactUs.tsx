@@ -3,7 +3,7 @@ import { styles } from "../styles";
 import * as emailjs from "emailjs-com";
 import { IoLocationSharp, IoMail } from "react-icons/io5";
 import { MdMail, MdMobileScreenShare } from "react-icons/md";
-import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 import { SectionWrapper } from "../hoc";
 
@@ -133,7 +133,7 @@ const ContactUs = () => {
                     "_blank"
                   )
                 }
-                className="cursor-pointer text-white hover:text-black bg-yellow-400 p-1 text-2xl rounded-full  hover:bg-white"
+                className="cursor-pointer text-white hover:text-black p-1 text-3xl rounded-full  hover:bg-white"
               />
               <FaInstagram
                 onClick={() =>
@@ -142,11 +142,20 @@ const ContactUs = () => {
                     "_blank"
                   )
                 }
-                className="cursor-pointer text-white hover:text-black bg-yellow-400 p-1 text-2xl rounded-full hover:bg-white"
+                className="cursor-pointer text-white hover:text-blackc p-1 text-3xl rounded-full hover:bg-white"
               />
               <MdMail
                 onClick={handleMailButtonClick}
-                className="cursor-pointer text-white hover:text-black bg-yellow-400 p-1 text-2xl rounded-full  hover:bg-white"
+                className="cursor-pointer text-white hover:text-black  p-1 text-3xl rounded-full  hover:bg-white"
+              />
+              <FaWhatsapp
+                onClick={() =>
+                  window.open(
+                    "https://api.whatsapp.com/send?phone=+9779706754903",
+                    "_blank"
+                  )
+                }
+                className="cursor-pointer text-white hover:text-green-500 p-1 text-3xl rounded-full hover:bg-green-100"
               />
             </div>
           </div>
@@ -203,16 +212,6 @@ const ContactUs = () => {
             <div className="   flex w-full flex-col gap-2">
               <p className="font-medium">Select Subject</p>
               <div className="w-full flex gap-3 flex-wrap sm:gap-5">
-                <label className="flex gap-2">
-                  <input
-                    type="radio"
-                    name="subject"
-                    value="Product Ingredients"
-                    checked={form.subject === "Product Ingredients"}
-                    onChange={handleChange}
-                  />
-                  Product Ingredients
-                </label>
                 <label className="flex gap-2">
                   <input
                     type="radio"

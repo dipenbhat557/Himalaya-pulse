@@ -50,7 +50,7 @@ const Products = () => {
               alt="product-1"
             />
           </div>
-          <p className="w-[80%] sm:w-[50%] text-primary  sm:leading-loose sm:tracking-wider">
+          <p className="w-[80%] sm:w-[57%] text-primary  sm:leading-loose sm:tracking-wider">
             {products?.[i]?.content}
           </p>
         </motion.div>

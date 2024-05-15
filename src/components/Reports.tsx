@@ -59,10 +59,10 @@ const Reports = () => {
         </div>
 
         <div className="flex flex-col w-full sm:w-[40%] h-[420px] sm:h-[370px] items-center justify-around border-x-2 pb-9 border-y-2 border-primary rounded-xl p-4">
-          <p className="w-[50%] text-[13px] sm:text-[16px] font-semibold h-auto my-1">
+          <p className="w-[50%] text-[13px] sm:text-[20px] font-semibold h-auto my-1">
             {reports?.[currentIndex]?.title}
           </p>
-          <p className="mr-8">{reports?.[currentIndex]?.batchno}</p>
+          <p className="mr-2 text-[11px]">{reports?.[currentIndex]?.batchno}</p>
           <div className="w-[80%] h-[95%] relative flex justify-center items-center">
             <img
               src={reports?.[currentIndex]?.img}
