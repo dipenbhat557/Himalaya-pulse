@@ -133,7 +133,7 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
                           setToggle(false);
                         }}
                       >
-                        Shilajeet
+                        Shilajit
                       </p>
                     </div>
                   )}
@@ -151,7 +151,7 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
           onMouseOver={() => handleMouseOverDropdown1()}
         >
           <ul className="w-full">
-            {["Moringa", "Shilajeet"].map((p, index) => (
+            {["Moringa", "Shilajit"].map((p, index) => (
               <li
                 key={index}
                 className="hover:bg-[#80b38930] px-2 py-1 rounded-sm text-[14px] cursor-pointer"

@@ -62,7 +62,7 @@ const hero = () => {
             transition={{ delay: 0.5, duration: 1 }}
             className="w-[100%] font-medium tracking-wider  z-40 text-[35px] sm:text-[65px] text-white font-serif"
           >
-            {"Authenticity meets ".split("").map((char, index) => (
+            {`"Authenticity meets `.split("").map((char, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 0 }}
@@ -75,7 +75,7 @@ const hero = () => {
             ))}
             <br />
 
-            {"Quality".split("").map((char, index) => (
+            {`Quality"`.split("").map((char, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 0 }}
