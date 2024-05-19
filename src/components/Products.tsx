@@ -24,7 +24,11 @@ const products = [
 
 const Products = () => {
   const location = useLocation();
-  const i = location?.state?.p;
+  const queryString = location.search;
+
+  const queryParams = new URLSearchParams(queryString);
+
+  const i = parseInt(queryParams.get("i") || "");
   return (
     <div className="flex flex-col  h-screen sm:h-[100vh] overflow-y-hidden justify-between ">
       <Navbar isHome={false} />

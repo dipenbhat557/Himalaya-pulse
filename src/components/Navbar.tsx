@@ -151,16 +151,12 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
           onMouseOver={() => handleMouseOverDropdown1()}
         >
           <ul className="w-full">
-            {["Moringa", "Shilajit"].map((p, index) => (
+            {["Healifera", "Shilajit"].map((p, index) => (
               <li
                 key={index}
                 className="hover:bg-[#80b38930] px-2 py-1 rounded-sm text-[14px] cursor-pointer"
               >
-                <p
-                  onClick={() => navigate("/products", { state: { p: index } })}
-                >
-                  {p}
-                </p>
+                <p onClick={() => navigate(`/products?i=${index}`)}>{p}</p>
               </li>
             ))}
           </ul>
