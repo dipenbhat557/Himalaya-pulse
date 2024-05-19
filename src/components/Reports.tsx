@@ -34,15 +34,15 @@ const Reports = () => {
                 <div
                   key={index}
                   className={`${
-                    index == currentIndex ? "border-l-4 border-primary " : ""
-                  } w-full h-[70px] border-b-2  flex  items-center pl-4 cursor-pointer`}
+                    index == currentIndex ? " " : ""
+                  } w-full h-[70px] border-2 flex  items-center pl-4 cursor-pointer`}
                   onClick={() => setCurrentIndex(index)}
                 >
-                  <IoMdInformationCircle
+                  {/* <IoMdInformationCircle
                     className={`${
                       index == currentIndex ? "text-primary " : ""
                     }`}
-                  />
+                  /> */}
                   <p
                     className={`${
                       index == currentIndex ? "font-semibold" : "font-light"
@@ -58,7 +58,7 @@ const Reports = () => {
           )}
         </div>
 
-        <div className="flex flex-col w-full sm:w-[40%] h-[420px] sm:h-[370px] items-center justify-around border-x-2 pb-9 border-y-2 border-primary rounded-xl p-4">
+        <div className="flex flex-col w-full sm:w-[40%] h-[420px] sm:h-[370px] items-center justify-around border-x-2 pb-9 border-y-2 rounded-xl p-4">
           <p className="w-[50%] text-[13px] sm:text-[20px] font-semibold h-auto my-1">
             {reports?.[currentIndex]?.title}
           </p>

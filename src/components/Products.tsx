@@ -43,7 +43,7 @@ const Products = () => {
           variants={fadeIn("right", "spring", 0.7, 0.5)}
           className="w-full flex sm:h-[40vh] flex-col sm:flex-row gap-4 sm:gap-0 sm:justify-around items-center"
         >
-          <div className="w-[80%] sm:w-[40%] h-[80%]">
+          <div className="w-[80%] sm:w-[50%] h-[90%]">
             <img
               className="w-full h-full object-contain"
               src={products?.[i]?.img}
