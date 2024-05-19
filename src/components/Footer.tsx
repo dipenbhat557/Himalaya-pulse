@@ -30,7 +30,7 @@ const Footer = () => {
       className="bg-black w-full h-[30vh] sm:h-[30vh] flex flex-col justify-between"
     >
       <div className="w-full h-[90%] flex items-center justify-around">
-        <div className="w-[50%] sm:w-[50%] mt-20 ml-10 h-full flex flex-col items-center gap-4">
+        <div className="w-[50%] sm:w-[50%] mt-20 ml-10 h-[80%] flex flex-col items-center gap-4">
           <div className="w-full h-[50%]">
             <img
               src={logo}

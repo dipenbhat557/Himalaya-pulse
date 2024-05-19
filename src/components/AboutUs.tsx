@@ -23,11 +23,12 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className=" sm:h-[58.5vh] ">
+    <div className="h-auto sm:h-[58.5vh] ">
       <Navbar isHome={false} />
       <div
-        className={`w-full h-full flex flex-col sm:flex-row sm:justify-between ${styles.paddingY}`}
+        className={`w-full h-full flex flex-col sm:flex-row sm:justify-between pl-4 ${styles.paddingY}`}
       >
+        <div className="sm:hidden w-full h-[312px] -z-10" />
         <motion.div
           variants={fadeIn("right", "spring", 0.7, 0.6)}
           className="w-full sm:w-[35%] flex items-center sm:mt-7 justify-center h-[50%] sm:h-full sm:relative"
@@ -35,7 +36,7 @@ const AboutUs = () => {
           {heroElements.map((element, index) => (
             <div
               key={index}
-              className={` sm:absolute w-full h-full  ${
+              className={` absolute left-[3%]  top-[12%] sm:top-0 w-[95%] sm:w-full h-[300px] sm:h-full  ${
                 index === currentElement
                   ? "visible opacity-100"
                   : "invisible opacity-0"
@@ -60,7 +61,7 @@ const AboutUs = () => {
           </motion.p>
           <motion.p
             variants={fadeIn("left", "spring", 0.7, 0.6)}
-            className="w-[90%] text-center sm:leading-loose"
+            className="w-[90%] text-justify sm:text-center sm:leading-loose"
           >
             Himalaya Pulse was envisioned in the year 2022, with an imaginative
             move to produce, plant, acquire and build goods/products related to
