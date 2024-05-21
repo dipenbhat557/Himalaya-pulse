@@ -120,16 +120,16 @@ const Navbar = ({ isHome }: { isHome: boolean }) => {
                       <p
                         className="p-2"
                         onClick={() => {
-                          navigate("/products", { state: { p: 0 } });
+                          navigate(`/products?i=0`);
                           setToggle(false);
                         }}
                       >
-                        Moringa
+                        Healifera
                       </p>
                       <p
                         className="p-2"
                         onClick={() => {
-                          navigate("/products", { state: { p: 1 } });
+                          navigate(`/products?i=1`);
                           setToggle(false);
                         }}
                       >
