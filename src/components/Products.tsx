@@ -30,11 +30,11 @@ const Products = () => {
 
   const i = parseInt(queryParams.get("i") || "");
   return (
-    <div className="flex flex-col  h-screen sm:h-[100vh] overflow-y-hidden justify-between ">
+    <div className="flex flex-col  h-auto sm:h-[100vh] overflow-y-hidden justify-between ">
       <Navbar isHome={false} />
       <div
         id="products"
-        className={`${styles.paddingX} py-2 w-full h-auto flex flex-col gap-2`}
+        className={`${styles.paddingX} py-2 w-full h-[550px] sm:h-auto flex flex-col gap-2`}
       >
         <motion.p
           variants={textVariant(0.2)}

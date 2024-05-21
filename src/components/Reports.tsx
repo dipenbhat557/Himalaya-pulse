@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { styles } from "../styles";
-import { IoMdInformationCircle } from "react-icons/io";
 import { AiOutlineSearch } from "react-icons/ai";
 import { reports } from "../constants";
 
