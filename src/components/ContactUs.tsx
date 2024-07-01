@@ -101,7 +101,7 @@ const ContactUs = () => {
             <div className="flex flex-col gap-2">
               <p className="text-[22px] font-semibold">Contact Information</p>
               <p className="font-light text-[12px]">
-                Say something to a start converstion
+                Say something to start a converstion
               </p>
             </div>
             <div className="flex gap-5">

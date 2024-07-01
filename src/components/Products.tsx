@@ -11,7 +11,7 @@ const products = [
   {
     title: "Himalaya Pulse - HEALIFERA",
     content:
-      "Healifera is an organic mixture of naturally beneficial plants. Healifera consists mostly of Moringa leaves powder which are known to be rich in vitamins, minerals, amino acids, and antioxidants. Moringa leaves powder helps in fighting inflammation, lowers blood sugar levels and cholesterol. The plant is known as the “Super Food” for its many other beneficial health protective properties. Stevia is a natural sweetener and has many health benefits and adds a bit of sweetness to the mixture for easy consumption. Heal-i-fera or as mentioned Healifera is a derived name from Moringa Oleifera which is the scientific name of Moringa. Our Moringa leaves powder are from organically grown plants in Nepal.",
+      "Healifera is an organic mix of beneficial plants, mainly Moringa leaves powder, rich in vitamins, minerals, amino acids, and antioxidants. It helps fight inflammation, lower blood sugar and cholesterol. Known as a “Super Food,” it offers many health benefits. Stevia, a natural sweetener, is added for taste. Healifera is derived from Moringa Oleifera.",
     img: p1,
   },
   {
